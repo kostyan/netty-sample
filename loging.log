@@ -1,0 +1,37 @@
+2012-01-20 17:18:29  INFO ReportGenerator:31 - Processed request: 0
+2012-01-20 17:22:05  INFO ReportGenerator:31 - Processed request: 0
+2012-01-20 17:27:48  INFO ReportGenerator:31 - Processed request: 0
+2012-01-20 17:28:01  INFO ReportGenerator:31 - Processed request: 0
+2012-01-20 17:31:30  INFO ReportGenerator:31 - Processed request: 0
+2012-01-20 17:32:13  INFO ReportGenerator:31 - Processed request: 0
+2012-01-20 17:33:52  INFO ReportGenerator:31 - Processed request: 0
+2012-01-20 17:37:04  INFO ReportGenerator:31 - Processed request: 0
+2012-01-20 17:37:59  INFO ReportGenerator:31 - Processed request: 0
+2012-01-20 17:38:13  INFO ReportGenerator:31 - Processed request: 0
+2012-01-20 17:40:04  INFO ReportGenerator:31 - Processed request: 0
+2012-01-20 18:01:55  INFO PlayerServiceImpl:25 - <INCOME_MSG> Request balance change on 520.000000 for username=den, transactionId=1569425102334683774T
+2012-01-20 18:01:55  INFO PlayerServiceImpl:43 - <OUTCOME_MSG> Balance changed with errorCode=0 on 520.000000 for username=den, transactionId=1569425102334683774T, balance after change=520.000000, balance version=1
+2012-01-20 18:01:55 ERROR PlayerBalanceChangeHandler:29 - Exception on message
+java.lang.ArrayIndexOutOfBoundsException: 49
+	at org.jboss.netty.buffer.BigEndianHeapChannelBuffer.setLong(BigEndianHeapChannelBuffer.java:114)
+	at org.jboss.netty.buffer.AbstractChannelBuffer.writeLong(AbstractChannelBuffer.java:424)
+	at estonia.nio.packets.PlayerBalanceChangePacketProcessor.write(PlayerBalanceChangePacketProcessor.java:32)
+	at estonia.nio.PacketEncoder.encode(PacketEncoder.java:20)
+	at org.jboss.netty.handler.codec.oneone.OneToOneEncoder.handleDownstream(OneToOneEncoder.java:66)
+	at org.jboss.netty.channel.Channels.write(Channels.java:611)
+	at org.jboss.netty.channel.Channels.write(Channels.java:578)
+	at org.jboss.netty.channel.AbstractChannel.write(AbstractChannel.java:251)
+	at estonia.nio.PlayerBalanceChangeHandler.messageReceived(PlayerBalanceChangeHandler.java:24)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:302)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.unfoldAndFireMessageReceived(ReplayingDecoder.java:525)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:506)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:443)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:274)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:261)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:351)
+	at org.jboss.netty.channel.socket.nio.NioWorker.processSelectedKeys(NioWorker.java:282)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:202)
+	at org.jboss.netty.handler.execution.MemoryAwareThreadPoolExecutor$MemoryAwareRunnable.run(MemoryAwareThreadPoolExecutor.java:526)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
